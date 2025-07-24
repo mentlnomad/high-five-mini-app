@@ -5,13 +5,30 @@ import React, { useState } from 'react';
 // Use your actual high five image from public folder
 const HIGH_FIVE_IMAGE = "/high_five_image.png";
 
-// Mock MiniKit for now - will be replaced with real MiniKit when available
+// Mock MiniKit with proper types
+interface PaymentPayload {
+  reference: string;
+  to: string;
+  tokens: Array<{ symbol: string; token_amount: string }>;
+  description: string;
+}
+
+interface PaymentResult {
+  finalPayload: {
+    status: string;
+    transactionHash: string;
+    reference: string;
+    amount: string;
+    to: string;
+  };
+}
+
 const MiniKit = {
-  isInstalled: () => {
+  isInstalled: (): boolean => {
     return typeof window !== 'undefined' && window.location.hostname !== 'localhost';
   },
   commandsAsync: {
-    pay: async (payload: any) => {
+    pay: async (payload: PaymentPayload): Promise<PaymentResult> => {
       console.log('MiniKit payment triggered:', payload);
       await new Promise(resolve => setTimeout(resolve, 3000));
       return {
@@ -28,13 +45,13 @@ const MiniKit = {
 };
 
 const Tokens = { USDC: 'USDC' };
-const tokenToDecimals = (amount: number) => amount * 1000000;
+const tokenToDecimals = (amount: number): number => amount * 1000000;
 
 export default function HighFiveMiniApp() {
-  const [isProcessing, setIsProcessing] = useState(false);
+  const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [paymentStatus, setPaymentStatus] = useState<'success' | 'error' | null>(null);
 
-  const handlePurchase = async () => {
+  const handlePurchase = async (): Promise<void> => {
     if (!MiniKit.isInstalled()) {
       alert('Please open this app in Base App to make payments');
       return;
@@ -45,7 +62,7 @@ export default function HighFiveMiniApp() {
 
     try {
       const referenceId = `highfive_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-      const paymentPayload = {
+      const paymentPayload: PaymentPayload = {
         reference: referenceId,
         to: process.env.NEXT_PUBLIC_MERCHANT_WALLET_ADDRESS || "0x742d35cc6634C0532925a3b8D2a87E2BF8b3c4A1",
         tokens: [{ symbol: Tokens.USDC, token_amount: tokenToDecimals(1).toString() }],
