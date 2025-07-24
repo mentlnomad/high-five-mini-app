@@ -1,0 +1,22 @@
+{
+    "accountAssociation": {
+      "header": "YOUR_FARCASTER_HEADER",
+      "payload": "YOUR_FARCASTER_PAYLOAD", 
+      "signature": "YOUR_FARCASTER_SIGNATURE"
+    },
+    "frame": {
+      "name": "High Five Mini App",
+      "iconUrl": "https://yourdomain.com/high-five-icon.png",
+      "splashImageUrl": "https://yourdomain.com/high-five-splash.png",
+      "splashBackgroundColor": "#FFD700",
+      "homeUrl": "https://yourdomain.com"
+    },
+    "description": "Spread good vibes with virtual high fives for $1 USDC! 🙌 One tap to send happiness and make someone's day better.",
+    "shortDescription": "Virtual high fives for good vibes",
+    "name": "High Five",
+    "websiteUrl": "https://yourdomain.com",
+    "imageUrl": "https://yourdomain.com/high-five-preview.png",
+    "version": "1.0.0",
+    "tags": ["social", "payments", "usdc", "fun", "positivity"],
+    "category": "social"
+  }
