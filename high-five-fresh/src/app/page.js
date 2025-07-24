@@ -274,15 +274,18 @@ export default function HighFiveMiniApp() {
               fontFamily: "Chicle, cursive",
               fontSize: "24px",
               fontWeight: "400",
-              color: "#CA861C"  // Add this line to fix the text color
+              color: "#CA861C",  // Add this line to fix the text color
+textAlign: "center"
             }}
           >
             {isProcessing ? (
-              <div className="flex items-center justify-center" style={{ color: "#CA861C" }}>
-                <div className="w-6 h-6 border-2 border-[#CA861C] border-t-transparent rounded-full animate-spin mr-3"></div>
-                Processing...
-              </div>
-            ) : (
+  <div className="flex items-center justify-center" style={{ color: "#CA861C" }}>
+    <div className="w-6 h-6 border-2 border-[#CA861C] border-t-transparent rounded-full animate-spin mr-3"></div>
+    Processing...
+  </div>
+) : (
+  'Buy Now'
+)}
               <span style={{ color: "#CA861C" }}>Buy Now</span>  // Make sure this has the color
             )}
           </button>
