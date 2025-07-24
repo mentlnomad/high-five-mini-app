@@ -262,10 +262,10 @@ export default function HighFiveMiniApp() {
               width: "354px",
               height: "96px",
               padding: "24px",
-              flexDirection: "column",
+              // flexDirection: "column",  // Comment this out
               justifyContent: "center",
               alignItems: "center",
-              gap: "16px",
+              gap: "0px",
               flexShrink: 0,
               borderRadius: "8px",
               border: "2px solid #CA861C",
