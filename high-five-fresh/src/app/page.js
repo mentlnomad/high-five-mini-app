@@ -256,24 +256,29 @@ export default function HighFiveMiniApp() {
   <div
   onClick={handlePurchase}
   style={{ 
+    position: "relative",
     width: "354px",
     height: "96px",
     border: "2px solid #CA861C",
     borderRadius: "8px",
     background: "linear-gradient(181deg, #FBDC33 0.92%, #FFF130 99.03%)",
     boxShadow: "0px 1px 4px 0px rgba(0, 0, 0, 0.10)",
+    cursor: "pointer"
+  }}
+>
+  <span style={{
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
     fontFamily: "Chicle, cursive",
     fontSize: "24px",
     fontWeight: "400",
     color: "#CA861C",
-    cursor: "pointer",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    userSelect: "none"
-  }}
->
-  {isProcessing ? "Processing..." : "Buy Now"}
+    whiteSpace: "nowrap"
+  }}>
+    {isProcessing ? "Processing..." : "Buy Now"}
+  </span>
 </div>
 
         {/* Footer */}
