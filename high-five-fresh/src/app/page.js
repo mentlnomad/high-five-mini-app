@@ -253,7 +253,7 @@ export default function HighFiveMiniApp() {
 
 {/* Buy Button */}
         <div className="w-full flex justify-center bg-white" style={{ paddingTop: "24px", paddingBottom: "24px" }}>
-          <button
+   <button
   onClick={handlePurchase}
   disabled={isProcessing}
   style={{ 
