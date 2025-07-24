@@ -257,31 +257,29 @@ export default function HighFiveMiniApp() {
             onClick={handlePurchase}
             disabled={isProcessing}
             className="transform transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-            style={{ 
-            display: "flex",
-            width: "354px",
-            height: "96px",
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: "8px",
-            border: "2px solid #CA861C",
-            background: "linear-gradient(181deg, #FBDC33 0.92%, #FFF130 99.03%)",
-            boxShadow: "0px 1px 4px 0px rgba(0, 0, 0, 0.10)",
-            fontFamily: "Chicle, cursive",
-            fontSize: "24px",
-            fontWeight: "400",
-            color: "#CA861C",
-            textAlign: "center"
-            }}
-          >
-            {isProcessing ? (
-  <div className="flex items-center justify-center" style={{ color: "#CA861C" }}>
-    <div className="w-6 h-6 border-2 border-[#CA861C] border-t-transparent rounded-full animate-spin mr-3"></div>
-    Processing...
-  </div>
-) : (
-  'Buy Now'
-)}
+           <button
+  onClick={handlePurchase}
+  disabled={isProcessing}
+  style={{ 
+    width: "354px",
+    height: "96px",
+    border: "2px solid #CA861C",
+    borderRadius: "8px",
+    background: "linear-gradient(181deg, #FBDC33 0.92%, #FFF130 99.03%)",
+    boxShadow: "0px 1px 4px 0px rgba(0, 0, 0, 0.10)",
+    fontFamily: "Chicle, cursive",
+    fontSize: "24px",
+    fontWeight: "400",
+    color: "#CA861C",
+    cursor: "pointer",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center"
+  }}
+>
+  {isProcessing ? "Processing..." : "Buy Now"}
+</button>
               <span style={{ color: "#CA861C" }}>Buy Now</span>  // Make sure this has the color
             )}
           </button>
