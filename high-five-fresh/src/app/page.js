@@ -253,9 +253,8 @@ export default function HighFiveMiniApp() {
 
 {/* Buy Button */}
         <div className="w-full flex justify-center bg-white" style={{ paddingTop: "24px", paddingBottom: "24px" }}>
-   <button
+  <div
   onClick={handlePurchase}
-  disabled={isProcessing}
   style={{ 
     width: "354px",
     height: "96px",
@@ -271,18 +270,11 @@ export default function HighFiveMiniApp() {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    textAlign: "center",
-    padding: "0",
-    margin: "0",
-    outline: "none",
-    appearance: "none",
-    WebkitAppearance: "none",
-    MozAppearance: "none"
+    userSelect: "none"
   }}
 >
   {isProcessing ? "Processing..." : "Buy Now"}
-</button>
-        </div>
+</div>
 
         {/* Footer */}
         <div className="w-full px-8 text-center bg-white" style={{ paddingBottom: "32px" }}>
