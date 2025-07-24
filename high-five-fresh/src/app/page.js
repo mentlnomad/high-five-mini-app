@@ -251,7 +251,7 @@ export default function HighFiveMiniApp() {
           </div>
         )}
 
-        {/* Buy Button */}
+{/* Buy Button */}
         <div className="w-full flex justify-center bg-white" style={{ paddingTop: "24px", paddingBottom: "24px" }}>
           <button
             onClick={handlePurchase}
@@ -273,19 +273,18 @@ export default function HighFiveMiniApp() {
               boxShadow: "0px 1px 4px 0px rgba(0, 0, 0, 0.10)",
               fontFamily: "Chicle, cursive",
               fontSize: "24px",
-              fontWeight: "400"
+              fontWeight: "400",
+              color: "#CA861C"  // Add this line to fix the text color
             }}
           >
-            <span className="text-[#CA861C]">
-              {isProcessing ? (
-                <div className="flex items-center justify-center">
-                  <div className="w-6 h-6 border-2 border-[#CA861C] border-t-transparent rounded-full animate-spin mr-3"></div>
-                  Processing...
-                </div>
-              ) : (
-                'Buy Now'
-              )}
-            </span>
+            {isProcessing ? (
+              <div className="flex items-center justify-center" style={{ color: "#CA861C" }}>
+                <div className="w-6 h-6 border-2 border-[#CA861C] border-t-transparent rounded-full animate-spin mr-3"></div>
+                Processing...
+              </div>
+            ) : (
+              <span style={{ color: "#CA861C" }}>Buy Now</span>  // Make sure this has the color
+            )}
           </button>
         </div>
 
