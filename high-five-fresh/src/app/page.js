@@ -258,24 +258,20 @@ export default function HighFiveMiniApp() {
             disabled={isProcessing}
             className="transform transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             style={{ 
-              display: "flex",
-              width: "354px",
-              height: "96px",
-              padding: "24px",
-              // flexDirection: "column",  // Comment this out
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "0px",
-              flexShrink: 0,
-              borderRadius: "8px",
-              border: "2px solid #CA861C",
-              background: "linear-gradient(181deg, #FBDC33 0.92%, #FFF130 99.03%)",
-              boxShadow: "0px 1px 4px 0px rgba(0, 0, 0, 0.10)",
-              fontFamily: "Chicle, cursive",
-              fontSize: "24px",
-              fontWeight: "400",
-              color: "#CA861C",  // Add this line to fix the text color
-textAlign: "center"
+            display: "flex",
+            width: "354px",
+            height: "96px",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: "8px",
+            border: "2px solid #CA861C",
+            background: "linear-gradient(181deg, #FBDC33 0.92%, #FFF130 99.03%)",
+            boxShadow: "0px 1px 4px 0px rgba(0, 0, 0, 0.10)",
+            fontFamily: "Chicle, cursive",
+            fontSize: "24px",
+            fontWeight: "400",
+            color: "#CA861C",
+            textAlign: "center"
             }}
           >
             {isProcessing ? (
