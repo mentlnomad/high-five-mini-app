@@ -1,41 +1,7 @@
-export async function GET() {
-    const manifest = {
-      "frame": {
-        "name": "High Five",
-        "version": "1",
-        "iconUrl": "https://high-five-mini-app.vercel.app/icon.png",
-        "homeUrl": "https://high-five-mini-app.vercel.app",
-        "imageUrl": "https://high-five-mini-app.vercel.app/preview.png",
-        "buttonTitle": "Open Mini App",
-        "splashImageUrl": "https://high-five-mini-app.vercel.app/splash.png",
-        "splashBackgroundColor": "#FFF130",
-        "webhookUrl": "https://high-five-mini-app.vercel.app/api/webhook",
-        "screenshotUrls": [
-          "https://high-five-mini-app.vercel.app/screenshot.png"
-        ],
-        "heroImageUrl": "https://high-five-mini-app.vercel.app/heroImageUrl.png",
-        "tags": [
-          "community",
-          "social",
-          "vibes",
-          "builder",
-          "basepay"
-        ],
-        "tagline": "High five your mood, instantly",
-        "ogTitle": "High Five – Feel Good Fast",
-        "ogImageUrl": "https://high-five-mini-app.vercel.app/heroImageUrl.png",
-        "ogDescription": "Your instant pick‑me‑up, one high five at a time",
-        "castShareUrl": "https://warpcast.com/~/compose?text=High+Five+Mini+App+-+Send+a+High+Five+for+$1+USDC:+https://high-five-mini-app.vercel.app",
-        "subtitle": "Your instant pick‑me‑up, one high five at a time",
-        "description": "Buy a virtual high five for just $1 USDC and feel that quick rush of positivity. It's your personal mood boost—a simple, fun way to celebrate yourself, lift your spirits, and keep your day moving in the right direction.",
-        "primaryCategory": "social"
-      }
-    };
-    
-    return new Response(JSON.stringify(manifest), {
-      headers: { 
-        'Content-Type': 'application/json',
-        'Cache-Control': 'no-cache'
-      },
-    });
+{
+    "accountAssociation": {
+      "header": "eyJmaWQiOjQxNDg0NSwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDhkRUI3Mzg0NEMyNkI5YzM3NGVFMTZEYTY5MDgzQzEyOTQwMzU0RmQifQ",
+      "payload": "eyJkb21haW4iOiJoaWdoLWZpdmUtbWluaS1hcHAudmVyY2VsLmFwcCJ9",
+      "signature": "MHgyMGI5OGFkNGY2NjQwOTIwNzA0ZTNlOGQ3ZjYzNmQ5MDA2NjhkYzY0MzIxMzNkYjdkYjQyNGU3NGNmOTZlNjJmNGY1ODZkODhkZGNkNDUwZmQxZDg0YzZiNzhkNjc0ZjdkYzY0MWU1ZmQzY2FlZTQ0MjFmZDBiYzA0ZWUwN2EzMzFi"
+    }
   }
