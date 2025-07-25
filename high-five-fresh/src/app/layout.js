@@ -1,4 +1,4 @@
-import { MiniKitContextProvider } from '../providers/MiniKitProvider';
+import { MiniKitContextProvider } from '../providers/MiniKitProvider.js';
 
 export const metadata = {
   title: 'High Five Mini App',
