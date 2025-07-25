@@ -251,43 +251,14 @@ export default function HighFiveMiniApp() {
           </div>
         )}
 
-        {/* Buy Button */}
+{/* Buy Button */}
         <div className="w-full flex justify-center bg-white" style={{ paddingTop: "24px", paddingBottom: "24px" }}>
-          <button
-            onClick={handlePurchase}
-            disabled={isProcessing}
-            className="transform transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-            style={{ 
-              display: "flex",
-              width: "354px",
-              height: "96px",
-              padding: "24px",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "16px",
-              flexShrink: 0,
-              borderRadius: "8px",
-              border: "2px solid #CA861C",
-              background: "linear-gradient(181deg, #FBDC33 0.92%, #FFF130 99.03%)",
-              boxShadow: "0px 1px 4px 0px rgba(0, 0, 0, 0.10)",
-              fontFamily: "Chicle, cursive",
-              fontSize: "24px",
-              fontWeight: "400"
-            }}
-          >
-            <span className="text-[#CA861C]">
-              {isProcessing ? (
-                <div className="flex items-center justify-center">
-                  <div className="w-6 h-6 border-2 border-[#CA861C] border-t-transparent rounded-full animate-spin mr-3"></div>
-                  Processing...
-                </div>
-              ) : (
-                'Buy Now'
-              )}
-            </span>
-          </button>
-        </div>
+  <div
+  onClick={handlePurchase}
+  className="buy-button"
+>
+  {isProcessing ? "Processing..." : "Buy Now"}
+</div>
 
         {/* Footer */}
         <div className="w-full px-8 text-center bg-white" style={{ paddingBottom: "32px" }}>
