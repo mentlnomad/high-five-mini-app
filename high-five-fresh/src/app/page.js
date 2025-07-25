@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useMiniKit } from '@coinbase/onchainkit/minikit';
 
 // Use your actual high five image from public folder
 const HIGH_FIVE_IMAGE = "/high_five_image.png";
@@ -33,7 +34,16 @@ const tokenToDecimals = (amount) => amount * 1000000;
 export default function HighFiveMiniApp() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [paymentStatus, setPaymentStatus] = useState(null);
+  
+// Add MiniKit hooks
+const { setFrameReady, isFrameReady, context } = useMiniKit();
 
+// Initialize the frame when ready
+useEffect(() => {
+  if (!isFrameReady) {
+    setFrameReady();
+  }
+}, [setFrameReady, isFrameReady]);
   const handlePurchase = async () => {
     if (!MiniKit.isInstalled()) {
       alert('Please open this app in Base App to make payments');
