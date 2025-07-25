@@ -1,74 +1,26 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { useMiniKit } from '@coinbase/onchainkit/minikit';
+import React, { useState } from 'react';
 
-// Use your actual high five image from public folder
 const HIGH_FIVE_IMAGE = "/high_five_image.png";
 
-// Mock MiniKit - simplified version
-const MiniKit = {
-  isInstalled: () => {
-    return typeof window !== 'undefined' && window.location.hostname !== 'localhost';
-  },
-  commandsAsync: {
-    pay: async (payload) => {
-      console.log('MiniKit payment triggered:', payload);
-      await new Promise(resolve => setTimeout(resolve, 3000));
-      return {
-        finalPayload: {
-          status: 'success',
-          transactionHash: '0x' + Math.random().toString(16).substr(2, 64),
-          reference: payload.reference,
-          amount: payload.tokens[0].token_amount,
-          to: payload.to
-        }
-      };
-    }
-  }
+// Simple mock payment for now
+const handleMockPayment = async () => {
+  await new Promise(resolve => setTimeout(resolve, 2000));
+  return { success: true };
 };
-
-const Tokens = { USDC: 'USDC' };
-const tokenToDecimals = (amount) => amount * 1000000;
 
 export default function HighFiveMiniApp() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [paymentStatus, setPaymentStatus] = useState(null);
-  
-// Add MiniKit hooks
-const { setFrameReady, isFrameReady, context } = useMiniKit();
 
-// Initialize the frame when ready
-useEffect(() => {
-  if (!isFrameReady) {
-    setFrameReady();
-  }
-}, [setFrameReady, isFrameReady]);
   const handlePurchase = async () => {
-    if (!MiniKit.isInstalled()) {
-      alert('Please open this app in Base App to make payments');
-      return;
-    }
-
     setIsProcessing(true);
     setPaymentStatus(null);
 
     try {
-      const referenceId = `highfive_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-      const paymentPayload = {
-        reference: referenceId,
-        to: process.env.NEXT_PUBLIC_MERCHANT_WALLET_ADDRESS || "0x742d35cc6634C0532925a3b8D2a87E2BF8b3c4A1",
-        tokens: [{ symbol: Tokens.USDC, token_amount: tokenToDecimals(1).toString() }],
-        description: "High Five - Spread good vibes! 🙌",
-      };
-
-      const { finalPayload } = await MiniKit.commandsAsync.pay(paymentPayload);
-      
-      if (finalPayload.status === 'success') {
-        setPaymentStatus('success');
-      } else {
-        setPaymentStatus('error');
-      }
+      const result = await handleMockPayment();
+      setPaymentStatus(result.success ? 'success' : 'error');
     } catch (error) {
       console.error('Payment error:', error);
       setPaymentStatus('error');
@@ -108,7 +60,6 @@ useEffect(() => {
           
           <div style={{ marginTop: "24px" }}>
             <h1 
-              className="text-[#CA861C] text-center"
               style={{ 
                 color: "#CA861C",
                 textAlign: "center",
@@ -150,15 +101,11 @@ useEffect(() => {
         >
           <div 
             style={{ 
-              overflow: "hidden",
               color: "#CA861C",
               textAlign: "center",
-              textOverflow: "ellipsis",
               fontFamily: "Chicle, cursive",
               fontSize: "32px",
-              fontStyle: "normal",
-              fontWeight: "400",
-              lineHeight: "normal"
+              fontWeight: "400"
             }}
           >
             $1.00 USDC
@@ -170,16 +117,14 @@ useEffect(() => {
               textAlign: "center",
               fontFamily: "Chivo Mono, monospace",
               fontSize: "14px",
-              fontStyle: "normal",
-              fontWeight: "400",
-              lineHeight: "20px"
+              fontWeight: "400"
             }}
           >
             per high five
           </div>
         </div>
 
-        {/* Body Section */}
+        {/* Features Section */}
         <div 
           style={{ 
             position: "relative",
@@ -196,34 +141,12 @@ useEffect(() => {
             marginRight: "-50vw"
           }}
         >
-          <div
-            style={{ 
-              width: "354px",
-              height: "183px",
-              flexShrink: 0,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "16px"
-            }}
-          >
-            <h2 
-              style={{ 
-                color: "#CA861C",
-                textAlign: "center",
-                fontFamily: "Chicle, cursive",
-                fontSize: "32px",
-                fontStyle: "normal",
-                fontWeight: "400",
-                lineHeight: "normal",
-                margin: "0"
-              }}
-            >
+          <div style={{ width: "354px", display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
+            <h2 style={{ color: "#CA861C", textAlign: "center", fontFamily: "Chicle, cursive", fontSize: "32px", margin: "0" }}>
               What you Get:
             </h2>
             
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0px" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
               <div style={{ fontFamily: "Chivo Mono, monospace", fontSize: "15px", lineHeight: "32px", color: "#CA861C", textAlign: "center" }}>
                 🙌 One virtual high five
               </div>
@@ -240,13 +163,12 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* Success/Error Messages */}
+        {/* Status Messages */}
         {paymentStatus === 'success' && (
           <div className="w-full px-8 bg-white" style={{ paddingTop: "16px", paddingBottom: "16px" }}>
             <div className="bg-green-50 border-2 border-green-200 rounded-xl p-6 text-center">
               <div className="text-green-800 font-bold text-xl mb-2">Payment Successful! 🎉</div>
-              <div className="text-green-600 text-base mb-2">Your $1 USDC payment has been processed!</div>
-              <div className="text-green-600 text-sm">High five sent! Thanks for spreading good vibes! 🙌</div>
+              <div className="text-green-600 text-base">High five sent! Thanks for spreading good vibes! 🙌</div>
             </div>
           </div>
         )}
@@ -255,34 +177,40 @@ useEffect(() => {
           <div className="w-full px-8 bg-white" style={{ paddingTop: "16px", paddingBottom: "16px" }}>
             <div className="bg-red-50 border-2 border-red-200 rounded-xl p-6 text-center">
               <div className="text-red-800 font-bold text-xl mb-2">Payment Failed ❌</div>
-              <div className="text-red-600 text-base mb-2">Unable to process your payment.</div>
-              <div className="text-red-600 text-sm">Please check your USDC balance and try again.</div>
+              <div className="text-red-600 text-base">Please try again.</div>
             </div>
           </div>
         )}
 
-{/* Buy Button */}
+        {/* Buy Button */}
         <div className="w-full flex justify-center bg-white" style={{ paddingTop: "24px", paddingBottom: "24px" }}>
-  <div
-  onClick={handlePurchase}
-  className="buy-button"
->
-  {isProcessing ? "Processing..." : "Buy Now"}
-</div>
+          <div
+            onClick={handlePurchase}
+            style={{ 
+              display: "flex",
+              width: "354px",
+              height: "96px",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "8px",
+              border: "2px solid #CA861C",
+              background: "linear-gradient(181deg, #FBDC33 0.92%, #FFF130 99.03%)",
+              boxShadow: "0px 1px 4px 0px rgba(0, 0, 0, 0.10)",
+              fontFamily: "Chicle, cursive",
+              fontSize: "24px",
+              fontWeight: "400",
+              color: "#CA861C",
+              cursor: "pointer",
+              textAlign: "center"
+            }}
+          >
+            {isProcessing ? "Processing..." : "Buy Now"}
+          </div>
+        </div>
 
         {/* Footer */}
         <div className="w-full px-8 text-center bg-white" style={{ paddingBottom: "32px" }}>
-          <div 
-            style={{ 
-              color: "#CA861C",
-              textAlign: "center",
-              fontFamily: "Chivo Mono, monospace",
-              fontSize: "10px",
-              fontStyle: "normal",
-              fontWeight: "400",
-              lineHeight: "16px"
-            }}
-          >
+          <div style={{ color: "#CA861C", fontFamily: "Chivo Mono, monospace", fontSize: "10px", lineHeight: "16px" }}>
             <p style={{ margin: "0" }}>Powered by Base Pay - No Fees!</p>
             <p style={{ margin: "0" }}>Payments processed as USDC on Base Network</p>
             <p style={{ margin: "0" }}>Secure and instant transactions</p>
