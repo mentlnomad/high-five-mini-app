@@ -1,13 +1,6 @@
-import { MiniKitContextProvider } from '../providers/MiniKitProvider.js';
-
 export const metadata = {
   title: 'High Five Mini App',
   description: 'Buy a high five for $1 USDC - spread good vibes!',
-  openGraph: {
-    title: 'High Five Mini App',
-    description: 'Buy a high five for $1 USDC - spread good vibes!',
-    images: [`${process.env.NEXT_PUBLIC_URL}/high_five_image.png`],
-  },
   other: {
     'fc:frame': 'vNext',
     'fc:frame:image': `${process.env.NEXT_PUBLIC_URL}/high_five_image.png`,
@@ -21,9 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-white">
-        <MiniKitContextProvider>
-          {children}
-        </MiniKitContextProvider>
+        {children}
       </body>
     </html>
   );
