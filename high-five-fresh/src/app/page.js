@@ -183,7 +183,7 @@ export default function HighFiveMiniApp() {
         )}
 
         {/* Buy Button */}
-        <div className="w-full flex justify-center items-center bg-white" style={{ paddingTop: "24px", paddingBottom: "24px", minHeight: "144px" }}>
+        <div className="w-full flex justify-center items-center bg-white" style={{ paddingTop: "24px", paddingBottom: "24px", minHeight: "144px", textAlign: "center" }}>
           <div
             onClick={handlePurchase}
             style={{ 
@@ -210,7 +210,7 @@ export default function HighFiveMiniApp() {
 
         {/* Footer */}
         <div className="w-full px-8 text-center bg-white" style={{ paddingBottom: "32px" }}>
-          <div style={{ color: "#2B52FF", fontFamily: "Chivo Mono, monospace", fontSize: "10px", lineHeight: "16px" }}>
+          <div style={{ color: "#2B52FF", fontFamily: "Chivo Mono, monospace", fontSize: "10px", lineHeight: "16px", textAlign: "center" }}>
             <p style={{ margin: "0" }}>Powered by Base Pay - No Fees!</p>
             <p style={{ margin: "0" }}>Payments processed as USDC on Base Network</p>
             <p style={{ margin: "0" }}>Secure and instant transactions</p>
