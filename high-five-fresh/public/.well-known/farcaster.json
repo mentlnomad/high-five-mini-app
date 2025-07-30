@@ -4,7 +4,8 @@
     "payload": "eyJkb21haW4iOiJoaWdoLWZpdmUtbWluaS1hcHAudmVyY2VsLmFwcCJ9",
     "signature": "MHgyMGI5OGFkNGY2NjQwOTIwNzA0ZTNlOGQ3ZjYzNmQ5MDA2NjhkYzY0MzIxMzNkYjdkYjQyNGU3NGNmOTZlNjJmNGY1ODZkODhkZGNkNDUwZmQxZDg0YzZiNzhkNjc0ZjdkYzY0MWU1ZmQzY2FlZTQ0MjFmZDBiYzA0ZWUwN2EzMzFi"
   }
-  "frame": {
+}
+  "miniapp": {
     "name": "High Five",
     "version": "1",
     "iconUrl": "https://high-five-mini-app.vercel.app/icon.png",
