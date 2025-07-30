@@ -47,7 +47,7 @@ export default function HighFiveMiniApp() {
             flexDirection: "column",
             alignItems: "center",
             margin: "0",
-            padding: "0",
+            padding: "0 0 32px 0",
             left: "50%",
             right: "50%",
             marginLeft: "-50vw",
@@ -183,7 +183,7 @@ export default function HighFiveMiniApp() {
         )}
 
         {/* Buy Button */}
-        <div className="w-full flex justify-center bg-white" style={{ paddingTop: "24px", paddingBottom: "24px" }}>
+        <div className="w-full flex justify-center items-center bg-white" style={{ paddingTop: "24px", paddingBottom: "24px", minHeight: "144px" }}>
           <div
             onClick={handlePurchase}
             style={{ 
