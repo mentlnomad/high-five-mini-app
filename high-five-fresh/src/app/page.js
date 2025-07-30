@@ -61,7 +61,7 @@ export default function HighFiveMiniApp() {
           <div style={{ marginTop: "24px" }}>
             <h1 
               style={{ 
-                color: "#CA861C",
+                color: "#2B52FF",
                 textAlign: "center",
                 fontFamily: "Chicle, cursive", 
                 fontSize: "36px",
@@ -89,8 +89,8 @@ export default function HighFiveMiniApp() {
             alignItems: "center",
             gap: "16px",
             flexShrink: 0,
-            borderTop: "2px solid #CA861C",
-            borderBottom: "2px solid #CA861C",
+            borderTop: "2px solid #2B52FF",
+            borderBottom: "2px solid #2B52FF",
             background: "#FFFBCC",
             margin: "0",
             left: "50%",
@@ -101,7 +101,7 @@ export default function HighFiveMiniApp() {
         >
           <div 
             style={{ 
-              color: "#CA861C",
+              color: "#2B52FF",
               textAlign: "center",
               fontFamily: "Chicle, cursive",
               fontSize: "32px",
@@ -113,7 +113,7 @@ export default function HighFiveMiniApp() {
           
           <div 
             style={{ 
-              color: "#CA861C",
+              color: "#2B52FF",
               textAlign: "center",
               fontFamily: "Chivo Mono, monospace",
               fontSize: "14px",
@@ -142,21 +142,21 @@ export default function HighFiveMiniApp() {
           }}
         >
           <div style={{ width: "354px", display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
-            <h2 style={{ color: "#CA861C", textAlign: "center", fontFamily: "Chicle, cursive", fontSize: "32px", margin: "0" }}>
+            <h2 style={{ color: "#2B52FF", textAlign: "center", fontFamily: "Chicle, cursive", fontSize: "32px", margin: "0" }}>
               What you Get:
             </h2>
             
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-              <div style={{ fontFamily: "Chivo Mono, monospace", fontSize: "15px", lineHeight: "32px", color: "#CA861C", textAlign: "center" }}>
+              <div style={{ fontFamily: "Chivo Mono, monospace", fontSize: "15px", lineHeight: "32px", color: "#2B52FF", textAlign: "center" }}>
                 🙌 One virtual high five
               </div>
-              <div style={{ fontFamily: "Chivo Mono, monospace", fontSize: "15px", lineHeight: "32px", color: "#CA861C", textAlign: "center" }}>
+              <div style={{ fontFamily: "Chivo Mono, monospace", fontSize: "15px", lineHeight: "32px", color: "#2B52FF", textAlign: "center" }}>
                 ⚡😊 Instant mood boost
               </div>
-              <div style={{ fontFamily: "Chivo Mono, monospace", fontSize: "15px", lineHeight: "32px", color: "#CA861C", textAlign: "center" }}>
+              <div style={{ fontFamily: "Chivo Mono, monospace", fontSize: "15px", lineHeight: "32px", color: "#2B52FF", textAlign: "center" }}>
                 🌈🤝 Spread good vibes
               </div>
-              <div style={{ fontFamily: "Chivo Mono, monospace", fontSize: "15px", lineHeight: "32px", color: "#CA861C", textAlign: "center" }}>
+              <div style={{ fontFamily: "Chivo Mono, monospace", fontSize: "15px", lineHeight: "32px", color: "#2B52FF", textAlign: "center" }}>
                 🌞🙏 Make someone's day
               </div>
             </div>
@@ -193,13 +193,13 @@ export default function HighFiveMiniApp() {
               justifyContent: "center",
               alignItems: "center",
               borderRadius: "8px",
-              border: "2px solid #CA861C",
+              border: "2px solid #2B52FF",
               background: "linear-gradient(181deg, #FBDC33 0.92%, #FFF130 99.03%)",
               boxShadow: "0px 1px 4px 0px rgba(0, 0, 0, 0.10)",
               fontFamily: "Chicle, cursive",
               fontSize: "24px",
               fontWeight: "400",
-              color: "#CA861C",
+              color: "#2B52FF",
               cursor: "pointer",
               textAlign: "center"
             }}
@@ -210,7 +210,7 @@ export default function HighFiveMiniApp() {
 
         {/* Footer */}
         <div className="w-full px-8 text-center bg-white" style={{ paddingBottom: "32px" }}>
-          <div style={{ color: "#CA861C", fontFamily: "Chivo Mono, monospace", fontSize: "10px", lineHeight: "16px" }}>
+          <div style={{ color: "#2B52FF", fontFamily: "Chivo Mono, monospace", fontSize: "10px", lineHeight: "16px" }}>
             <p style={{ margin: "0" }}>Powered by Base Pay - No Fees!</p>
             <p style={{ margin: "0" }}>Payments processed as USDC on Base Network</p>
             <p style={{ margin: "0" }}>Secure and instant transactions</p>
