@@ -7,7 +7,7 @@
     "imageUrl": "https://high-five-mini-app.vercel.app/preview.png",
     "buttonTitle": "Open Mini App",
     "splashImageUrl": "https://high-five-mini-app.vercel.app/high-five-splash.png",
-    "splashBackgroundColor": "#282FE",
+    "splashBackgroundColor": "#2B52FF",
     "webhookUrl": "https://high-five-mini-app.vercel.app/api/webhook",
     "subtitle": "High five your mood ",
     "description": "Buy a virtual high five for just 1 USDC and feel that rush of positivity. Your personal mood booster simple, fun way to connect and brighten someone's day instantly.",
