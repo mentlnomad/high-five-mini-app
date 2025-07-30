@@ -1,7 +1,30 @@
 {
-  "accountAssociation": {
-    "header": "eyJmaWQiOjQxNDg0NSwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDhkRUI3Mzg0NEMyNkI5YzM3NGVFMTZEYTY5MDgzQzEyOTQwMzU0RmQifQ",
-    "payload": "eyJkb21haW4iOiJoaWdoLWZpdmUtbWluaS1hcHAudmVyY2VsLmFwcCJ9",
-    "signature": "MHgyMGI5OGFkNGY2NjQwOTIwNzA0ZTNlOGQ3ZjYzNmQ5MDA2NjhkYzY0MzIxMzNkYjdkYjQyNGU3NGNmOTZlNjJmNGY1ODZkODhkZGNkNDUwZmQxZDg0YzZiNzhkNjc0ZjdkYzY0MWU1ZmQzY2FlZTQ0MjFmZDBiYzA0ZWUwN2EzMzFi"
+  "frame": {
+    "name": "High Five",
+    "version": "1",
+    "iconUrl": "https://https://high-five-mini-app.vercel.app//icon.png",
+    "homeUrl": "https://high-five-mini-app.vercel.app/",
+    "imageUrl": "https://high-five-mini-app.vercel.app/preview.png",
+    "buttonTitle": "Open Mini App",
+    "splashImageUrl": "https://high-five-mini-app.vercel.app/high-five-splash.png",
+    "splashBackgroundColor": "#2B52FF",
+    "webhookUrl": "https://high-five-mini-app.vercel.app//api/webhook",
+    "subtitle": "Your instant pick‑me‑up, one high five at a time",
+    "description": "Buy a virtual high five for just $1 USDC and feel that rush of positivity. Your personal mood boost—a simple, fun way to celebrate yourself and keep your day on track",
+    "primaryCategory": "entertainment",
+    "screenshotUrls": [
+      "https://high-five-mini-app.vercel.app/screenshot.png"
+    ],
+    "heroImageUrl": "https://high-five-mini-app.vercel.app/preview.png",
+    "tags": [
+      "social",
+      "usdc",
+      "basepay",
+      "vibes",
+      "community"
+    ],
+    "ogTitle": "High five your mood, instantly",
+    "ogDescription": "Your instant pick‑me‑up, one high five at a time",
+    "ogImageUrl": "https://high-five-mini-app.vercel.app/preview.png"
   }
 }
